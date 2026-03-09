@@ -67,6 +67,7 @@ function renderMerits(list) {
     });
 }
 
+// Klick påskägg
 const colors = ["#ffb3b3", "#b3d9ff", "rgba(165, 148, 117, 1)"];
 let currentColor = 0;
 
@@ -78,4 +79,63 @@ document.getElementById("secret-click").addEventListener("click", () => {
         currentColor = 0; // börja om från första färgen
     }
 });
+
+// 1337 påskägget
+let keySequence = "";
+const secretCode = "1337";
+
+document.addEventListener("keydown", (e) => {
+    keySequence += e.key;
+
+    if (keySequence.includes(secretCode)) {
+        const modal = document.getElementById("easter-modal");
+        if (modal) {
+            modal.style.display = "flex";
+        }
+        keySequence = "";
+    }
+
+    if (keySequence.length > secretCode.length) {
+        keySequence = keySequence.slice(-secretCode.length);
+    }
+});
+
+const closeBtn = document.getElementById("close-modal");
+if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+        document.getElementById("easter-modal").style.display = "none";
+    });
+}
+
+// Github via API
+async function loadGithubProjects() {
+    const container = document.getElementById("github-projects");
+    const loadingText = document.getElementById("loading");
+
+    try {
+        const response = await fetch("https://api.github.com/users/albinlinjer/repos");
+        const repos = await response.json();
+
+        loadingText.remove();
+
+        repos.forEach(repo => {
+            const div = document.createElement("div");
+            div.className = "project-box";
+
+            div.innerHTML = `
+                <h3>${repo.name}</h3>
+                <p>${repo.description || "Ingen beskrivning tillgänglig."}</p>
+                <a href="${repo.html_url}" target="_blank" class="open-btn">Visa</a>
+            `;
+
+            container.appendChild(div);
+        });
+
+    } catch (error) {
+        loadingText.textContent = "Kunde inte ladda projekt.";
+        console.error(error);
+    }
+}
+
+loadGithubProjects();
 
