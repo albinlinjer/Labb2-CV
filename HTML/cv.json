@@ -1,0 +1,80 @@
+{
+  "education": [
+    {
+      "title": "Systemutvecklare .NET",
+      "school": "Campus Varberg",
+      "years": "2024 - Pågår"
+    },
+    {
+      "title": "Ekonomiprogrammet, juridik",
+      "school": "Peder Skrivare Skola",
+      "years": "2017 - 2020"
+    },
+    {
+      "title": "Grundskola",
+      "school": "Almers Skola",
+      "years": "2007 - 2017"
+    }
+  ],
+
+  "experience": [
+    {
+      "role": "Elevassistent och Fritidspedagog",
+      "place": "Trönningeskolan",
+      "years": "2024 - 2025"
+    },
+    {
+      "role": "Instruktör",
+      "place": "Warbergslägret / Warberg IC",
+      "years": "2022 - 2025"
+    },
+    {
+      "role": "Lagerarbetare",
+      "place": "Scorett",
+      "years": "2022 - 2023"
+    },
+    {
+      "role": "Säljare",
+      "place": "Fiskebröderna",
+      "years": "2022"
+    },
+    {
+      "role": "Bartender",
+      "place": "Werséns Åre",
+      "years": "2021 - 2022"
+    },
+    {
+      "role": "Butiksbiträde",
+      "place": "ICA Hajen",
+      "years": "2018 - 2022"
+    },
+    {
+      "role": "Servitör och hovmästare",
+      "place": "Restaurang Solviken",
+      "years": "2016"
+    },
+    {
+      "role": "Tidningsförsäljare",
+      "place": "GT",
+      "years": "2012 - 2013"
+    }
+  ],
+
+  "merits": [
+    {
+      "title": "Innebandytränare",
+      "place": "Warberg IBF",
+      "years": "2017 - Pågår"
+    },
+    {
+      "title": "Innebandytränare",
+      "place": "Hallands Innebandyförbund",
+      "years": "2023 - 2025"
+    },
+    {
+      "title": "B-körkort",
+      "place": "",
+      "years": "2017"
+    }
+  ]
+}
