@@ -116,21 +116,23 @@ async function loadGithubProjects() {
         const response = await fetch("https://api.github.com/users/albinlinjer/repos");
         const repos = await response.json();
 
-        loadingText.remove();
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
+        loadingText.remove();
+        
         repos.forEach(repo => {
             const div = document.createElement("div");
             div.className = "project-box";
-
+            
             div.innerHTML = `
-                <h3>${repo.name}</h3>
-                <p>${repo.description || "Ingen beskrivning tillgänglig."}</p>
-                <a href="${repo.html_url}" target="_blank" class="open-btn">Visa</a>
+            <h3>${repo.name}</h3>
+            <p>${repo.description || "Ingen beskrivning tillgänglig..."}</p>
+            <a href="${repo.html_url}" target="_blank" class="open-btn">Visa</a>
             `;
-
+            
             container.appendChild(div);
         });
-
+        
     } catch (error) {
         loadingText.textContent = "Kunde inte ladda projekt.";
         console.error(error);
