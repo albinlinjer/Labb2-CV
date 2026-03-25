@@ -67,18 +67,21 @@ function renderMerits(list) {
     });
 }
 
-// Klick påskägg
-const colors = ["#ffb3b3", "#b3d9ff", "rgba(165, 148, 117, 1)"];
-let currentColor = 0;
-
-document.getElementById("secret-click").addEventListener("click", () => {
-    document.body.style.backgroundColor = colors[currentColor];
-
-    currentColor++;
-    if (currentColor >= colors.length) {
-        currentColor = 0; // börja om från första färgen
-    }
-});
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // Klick påskägg
+    const colors = ["#ffb3b3", "#b3d9ff", "rgba(165, 148, 117, 1)"];
+    let currentColor = 0;
+    
+    document.getElementById("secret-click").addEventListener("click", () => {
+        document.body.style.backgroundColor = colors[currentColor];
+        
+        currentColor++;
+        if (currentColor >= colors.length) {
+            currentColor = 0; // börja om från första färgen
+        }
+    });
+})
 
 // 1337 påskägget
 let keySequence = "";
